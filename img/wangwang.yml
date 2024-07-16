@@ -4,7 +4,7 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - {name: jp1, server: 20.243.22.145, port: 54377, type: vmess, uuid: 7b357019-ea36-477a-826c-652e57167c79, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /7b357019-ea36-477a-826c-652e57167c79}}
+  - {name: jp1, server: 20.243.22.145, port: 54378, type: vmess, uuid: 7b357019-ea36-477a-826c-652e57167c79, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /7b357019-ea36-477a-826c-652e57167c79}}
   - {name: kr1, server: 20.196.223.37, port: 22937, type: vmess, uuid: fc4936bb-a143-461a-d6b7-f85d29f9c6b8, alterId: 0, cipher: auto, tls: false}
   - {name: us1, server: 129.153.88.228, port: 58962, type: vmess, uuid: e1344ad1-966c-433a-d595-44c6024fe635, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /e1344ad1-966c-433a-d595-44c6024fe635}}
   
