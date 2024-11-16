@@ -1,0 +1,34 @@
+name: Backup to OneDrive
+
+on:
+  push:
+    branches:
+      - main  # 或者您的主分支名称
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # 获取完整历史
+      
+      - name: Setup Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+      
+      - name: Install OneDrive SDK
+        run: |
+          pip install O365
+      
+      - name: Backup to OneDrive
+        env:
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
+        run: |
+          python backup_script.py
